@@ -133,9 +133,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-fetch-blob')
     compile project(':react-native-share-menu')
     compile project(':react-native-video')
-    compile project(':react-native-fetch-blob')
     compile project(':react-native-spinkit')
     compile project(':react-native-vector-icons')
     compile fileTree(dir: "libs", include: ["*.jar"])

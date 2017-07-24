@@ -7,7 +7,7 @@ import {
     Button,
     StatusBar,
     Platform,
-    FlatList
+    FlatList,
 } from 'react-native';
 import {
     Header,
@@ -24,7 +24,7 @@ import Izzati from 'react-native-izzati';
 import RNFetchBlob from 'react-native-fetch-blob';
 import store from 'react-native-simple-store';
 import Swipeout from 'react-native-swipeout';
-import ShareMenu from 'react-native-share-menu';
+import Share from './share'
 
 export default class YTDownload extends Component {
 
@@ -46,13 +46,13 @@ export default class YTDownload extends Component {
             console.log(this.state.list)
             this.setState({loading: false})
         })
-        ShareMenu.getSharedText(text => {
+        Share.getSharedText(text => {
             if (text && text.length) {
                 this.setState({ url: text }, () => {
                     this.setState({modalVisible: true}, () => {
                         this.download()
                         this.setURL("")
-                        ShareMenu.clearSharedText()
+                        Share.clearSharedText()
                     })
                 });
             }
